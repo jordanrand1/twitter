@@ -5,7 +5,7 @@
   <div class="eight wide column">
   <h2>Log In</h2>
   <br>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field ui fluid input">
