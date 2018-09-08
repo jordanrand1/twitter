@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+gem "paperclip", "~> 6.0.0"
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
