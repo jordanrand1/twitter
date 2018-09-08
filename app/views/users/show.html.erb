@@ -1,10 +1,66 @@
-<h1><%= @user.user_name %></h1>
-<%= image_tag @user.avatar.url %>
-<h3>Bio</h3>
-<p><%= @user.bio.description %></p>
-<h3>Posts</h3>
-<ul>
-  <% @user.posts.order(created_at: :desc).each do |post| %>
-    <li><%= link_to post.content, post_path(post) %></li>
+<div class="ui grid">
+  <div class="four wide column">
+    <h1><%= @user.user_name %></h1>
+    <%= image_tag @user.avatar.url %>
+    <h3>Bio</h3>
+    <p><%= @user.bio.description %></p>
+  </div>
+  <div class="eight wide column">
+    <h3>Posts</h3>
+    <div class="ui medium feed">
+      <div class="event">
+        <div class="label">
+          <%= image_tag @user.avatar.url(:thumb) %>
+        </div>
+        <div class="content">
+          <div class="summary">
+            <%= link_to @user.user_name, user_show_path(@user) %>
+            <div class="date">
+              <%= @user.posts.first.created_at%>
+            </div>
+          </div>
+          <div class="extra text">
+            <%= link_to @user.posts.first.content, post_path(@user) %>
+          </div>
+          <div class="meta">
+            <a class="like">
+              <i class="like icon"></i> 5 Likes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="four wide column"></div>
+
+  <% @user.posts.each do |post| %>
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+      <div class="ui medium feed">
+        <div class="event">
+          <div class="label">
+            <%= image_tag post.user.avatar.url(:thumb) %>
+          </div>
+          <div class="content">
+            <div class="summary">
+              <%= link_to post.user.user_name, user_show_path(post.user_id) %>
+              <div class="date">
+                <%= post.created_at%>
+              </div>
+            </div>
+            <div class="extra text">
+              <%= link_to post.content, post_path(post) %>
+            </div>
+            <div class="meta">
+              <a class="like">
+                <i class="like icon"></i> 5 Likes
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="four wide column"></div>
   <% end %>
-</ul>
+  
+</div>

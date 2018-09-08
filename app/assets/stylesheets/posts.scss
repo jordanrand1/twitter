@@ -1,3 +1,15 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.feed{
+  background-color: #1c371d;
+  padding: 20px;
+}
+
+.ui.grid > .eight.wide.column:not(.row){
+  padding: 0px;
+  border-top: 1px solid #09130e;
+  border-left: 1px solid #09130e;
+  border-right: 1px solid #09130e;
+}
