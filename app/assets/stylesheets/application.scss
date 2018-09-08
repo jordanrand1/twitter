@@ -53,3 +53,12 @@ body {
   border-radius: 50px !important;
 }
 
+.background-image {
+  background-image: url('twitter_bird2.png');
+  height: 100vh;
+  background-size: cover;
+  background-position-x: -250px;
+  // width: 50px;
+  // height: 500px;
+  // transform: scale(10);
+}
