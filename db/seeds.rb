@@ -1,5 +1,5 @@
 5.times do |i|
-  User.create(email: "User_#{i}@test.com", password: 'password')
+  User.create(email: "User_#{i}@test.com", password: 'password', user_name: "#{i}_username")
 
   5.times do |j|
     User.find(i + 1).posts.create(content: "User #{i} tweet #{j}")
