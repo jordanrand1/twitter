@@ -28,6 +28,8 @@ body {
 
 .ui.input > input{ 
   background-color: #40553d;
+  border-radius: 50px !important;
+  margin: 4px 120px 4px 0px;
 }
 
 .ui.inverted.segment {
@@ -40,5 +42,10 @@ body {
 
 .green {
   background-color: #1c371d !important;
+}
+
+.button{
+  margin-top: 4px !important;
+  border-radius: 50px !important;
 }
 

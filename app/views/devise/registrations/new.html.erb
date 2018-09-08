@@ -1,29 +1,30 @@
-<h2>Sign up</h2>
+<div class="ui middle aligned grid">
+  <div class="eight wide column">
+    <div style="background-color: white; height:100vh;"></div>
+  </div>
+  <div class="eight wide column">
+  <h2>Sign up</h2>
+  <br>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field ui input">
-    <%# <%= f.label :email %><br /> 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"%>
+    <div class="field ui fluid input">
+      <%# <%= f.label :email %><br /> 
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"%>
+    </div>
+    </br>
+    <div class="field ui fluid input">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password"%>
+    </div>
+    </br>
+    <div class="field ui fluid input">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password"%>
+    </div>
+    </br>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "ui green button" %>
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
   </div>
-  </br>
-  <div class="field ui input">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password"%>
-  </div>
-  </br>
-  <div class="field ui input">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password"%>
-  </div>
-  </br>
-  <div class="actions">
-    <%= f.submit "Sign up", class: "ui green button" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
