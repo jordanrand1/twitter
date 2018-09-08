@@ -4,7 +4,7 @@
 <p><%= @user.bio.description %></p>
 <h3>Posts</h3>
 <ul>
-  <% @user.posts.order(created_at: :desc) do |post| %>
+  <% @user.posts.order(created_at: :desc ) do |post| %>
     <li><%= link_to post.content, post_path(post) %></li>
   <% end %>
 </ul>
