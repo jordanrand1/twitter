@@ -15,7 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'semantic'
-gem 'jquery-gem'
+gem 'jquery-rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
