@@ -12,5 +12,10 @@
 <% end %>
 
 <% @post.comments.order(created_at: :desc).each do |comment| %>
-  <p><%= comment.message %></p>
+  <p>
+    <%= comment.user.user_name %>: <%= comment.message %>
+    <% if comment.user_id == current_user.id %>
+      <%= link_to "Delete Comment", post_comment_path(@post, comment), method: :delete %>
+    <% end %>
+  </p>
 <% end %>
