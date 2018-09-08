@@ -1,0 +1,7 @@
+<h1> Bio </h1>
+<%= form_for [@user, @bio], :url => bio_edit_path(@user.id), :html => {:method => :post} do |f| %>
+  <%= f.label :bio %>
+  <%= f.text_field :description %>
+  <br />
+  <%= f.submit %>
+  <% end %>

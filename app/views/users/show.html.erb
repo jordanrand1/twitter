@@ -61,6 +61,19 @@
       </div>
     </div>
     <div class="four wide column"></div>
+<h1><%= @user.user_name %></h1>
+<%= image_tag @user.avatar.url %>
+<h3>Bio</h3>
+<p><%= @user.bio.description %></p>
+ <% if @user.id == current_user.id %>
+  <%= link_to 'Edit Bio', bio_edit_path(@user, @user.bio.id)%>
+ <% end %>
+
+
+ <h3>Posts</h3>
+<ul>
+  <% @user.posts.order(created_at: :desc ) do |post| %>
+    <li><%= link_to post.content, post_path(post) %></li>
   <% end %>
   
 </div>
