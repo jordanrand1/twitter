@@ -1,0 +1,16 @@
+<h3><%= @post.user.user_name %></h3>
+<h2><%= @post.content %></h2>
+
+<p>Comments</p>
+
+<% new_comment = @post.comments.new %>
+<%= form_for new_comment, :url => post_comments_path(@post.id), :html => { :method => :post } do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_field :message %>
+  <br>
+  <%= f.submit 'Post comment' %>
+<% end %>
+
+<% @post.comments.order(created_at: :desc).each do |comment| %>
+  <p><%= comment.message %></p>
+<% end %>
