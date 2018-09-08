@@ -16,10 +16,12 @@
 
 @import 'semantic-ui';
 
+@import 'posts';
+
 .ui.segment {
   border-radius: 0px !important;
 }
 
 .body {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: #141d26 !important;
 }
